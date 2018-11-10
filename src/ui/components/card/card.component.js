@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { Button } from '../button/button.component'
 import './card.style.css'
 
@@ -13,7 +13,7 @@ export class Card extends Component {
     return (
       <Button onClick={() => this.props.handleSelectDog(dog, isSelected)}>
         <div className='dog'>
-          <img className={`dog__image ${selectedClass}`} src={dog} />
+          <img alt="dog-image" className={`dog__image ${selectedClass}`} src={dog} />
           <Button onClick={(event) => this.props.handleDeleteDog(event, dog, isSelected)} className='dog__image__action'>
             X
           </Button>

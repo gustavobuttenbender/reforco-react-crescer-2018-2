@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import './dog-form.style.css'
 import { DogService } from '../../../service'
 import { 
@@ -92,7 +92,6 @@ export class DogFormScreen extends Component {
     this.setState({ selectedDogs: [] })
   }
 
-
   /*
   *
   * Renders
@@ -126,7 +125,7 @@ export class DogFormScreen extends Component {
         >
           <span className="sum">Get Dog</span>
         </Button>
-        { hasDogsSelected > 0 && (
+        { hasDogsSelected && (
           <Button 
             className="form__actions__button" 
             onClick={this.handleUnselectAllDogs}
@@ -134,7 +133,7 @@ export class DogFormScreen extends Component {
             <span className="sum">Unselect All Dogs</span>
           </Button>
         )}
-        { hasDogs > 0 && (
+        { hasDogs && (
           <Button 
             className="form__actions__button" 
             onClick={this.handleDeleteAllDogs}
